@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  # db:
+  #   container_name: mongo_db
+  #   image: mongo:latest
+  #   command: mongod
+  #   ports:
+  #     - $DB_PORT:27017
+  #   volumes:
+  #     - ./data/db:/data/db
+  #     - ./data/configdb:/data/configdb
+  #   env_file:
+  #     - .env
+
+  api:
+    container_name: api
+    image: node:latest
+    ports:
+      - 3000:3000
+    working_dir: /app
+    volumes:
+      - ./backend:/app
